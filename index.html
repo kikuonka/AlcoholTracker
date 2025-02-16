@@ -9,11 +9,7 @@
 </head>
 <body>
     <header>
-        <img scr="#" href="#"> <!-- логотип -->
-        <nav>
-            <a href="#"></a> <!-- ссылка на git -->
-            <a href="#"></a> <!-- ссылка на telegram -->
-        </nav>
+
     </header>
     <h1>Трекер алкоголя</h1>
     <main>
@@ -32,6 +28,15 @@
             </thead>
             <tbody id="days"></tbody>
         </table>
+
+       <div class="progress">
+            <svg view="0 0 100 100">
+                <circle class="progress-frame" cx="50" cy="50" r="45"></circle>
+                <circle class="progress-bar" id="progressBar" cx="50" cy="50" r="45"></circle>
+                <text id="progressText" x="50" y="50" text-anchor="middle" alignment-baseline="central">0$</text>
+            </svg>
+       </div>
+       
         <script>
             СalendarGeneration();
         </script>

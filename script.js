@@ -1,5 +1,8 @@
 'use strict';
 
+let markedDays = 0;
+const maxDays = 30; // Максимальное значение шкалы
+
 function СalendarGeneration() {
     let today = new Date(); // текущая дата
     let currentMonth = today.getMonth(); // месяц (от 0 до 11) 
@@ -30,16 +33,20 @@ function СalendarGeneration() {
             let buttonColored;
             button.onclick = function() {
                 if (buttonColored) {
-                    button.style.backgroundColor = '';
                     button.style.backgroundImage = '';
-                    button.style.color = '';
+                    button.style.color = ' #D6D4D6';
                     buttonColored = false;
+
+                    markedDays--;
                 } else {
                     button.style.backgroundImage = 'linear-gradient( #BB673B, #D6D4D6)';
-                    button.style.color = '#D6D4D6';
+                    button.style.color = ' #D6D4D6';
                     buttonColored = true;
+
+                    markedDays++;
                 }
-            }
+                updateCircularProgress();
+            };
 
             if ((i === 0 && j < firstDay) || date > lastDay) {
                 button.textContent = '';
@@ -53,5 +60,20 @@ function СalendarGeneration() {
             row.appendChild(cell);
         }
         table.appendChild(row);
+    }
+}
+
+function updateCircularProgress() {
+    let progressCircle = document.getElementById('progressBar');
+    let progressText = document.getElementById('progressText');
+
+    let progressPercentage = (markedDays / maxDays) * 100;
+    let offset = 283 - (progressPercentage / 100) * 283; // Вычисляем длину круга
+
+    progressCircle.style.strokeDashoffset = offset; // Обновляем круговой индикатор
+    progressText.textContent = `${Math.round(progressPercentage)}%`; // Обновляем текст
+
+    if (markedDays >= maxDays) {
+        markedDays = 0;
     }
 }

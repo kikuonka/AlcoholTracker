@@ -54,4 +54,42 @@ button {
     border-radius: 20%;
     border: none;
     background: transparent;
+    color: #ffffff;
+}
+
+.progress {
+    width: 200px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto;
+}
+
+svg {
+    transform: rotate(-90deg); /* Начинаем с верха */
+    width: 100%;
+    height: 100%;
+}
+
+.progress-frame {
+    fill: none;
+    stroke: #ddd;
+    stroke-width: 10;
+}
+
+.progress-bar {
+    fill: none;
+    stroke: #4caf50;
+    stroke-width: 10;
+    stroke-linecap: round;
+    stroke-dasharray: 283; /* Полная длина окружности (2 * PI * R) */
+    stroke-dashoffset: 283; /* Начинаем с полного круга */
+    transition: stroke-dashoffset 0.3s ease;
+}
+
+text {
+    font-size: 16px;
+    fill: #000;
+    font-weight: bold;
 }
