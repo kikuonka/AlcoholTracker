@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    background-image: url('img/JackDaniels.jpg');
+    background-repeat: no-repeat;
+    background-size: 40%; 
+    background-position-y: bottom;
+    background-position-x: left;
+    color: #ffffff;
+    background-color: #141414;
+    font-family: "EB Garamond", serif;
+}
+
+h1 {
+    width: 100vw;
+    text-align: center;
+    font-size: 42px;
+}
+
+main {
+    display: grid;
+    grid-template-rows: auto 1fr;
+    place-items: center;
+    height: 60%;
+    padding: 20px;
+}
+
+table {
+    font-size: 32px;
+}
+
+thead tr {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 20px;
+}
+
+tbody tr {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 20px
+}
+
+button {
+    width: 3vw;
+    height: 3wh;
+    font-size: 20px;
+    border-radius: 20%;
+    border: none;
+    background: transparent;
+}
